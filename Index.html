@@ -15,7 +15,7 @@
 
     header {
       background-color: #1e1e1e;
-      color: #80cbc4;
+      color: #FBC02D;
       padding: 2rem;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -32,20 +32,38 @@
 
     button.toggle-btn {
       background-color: transparent;
-      color: #00e5ff;
-      border: 2px solid #00e5ff;
+      color: #FBC02D;
+      border: 2px solid #FBC02D;
       padding: 0.8rem 1.6rem;
       border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px #00e5ff33;
+      box-shadow: 0 0 10px #FBC02D55;
     }
 
     button.toggle-btn:hover {
-      background-color: #00e5ff;
+      background-color: #FBC02D;
       color: #121212;
-      box-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff99;
+      box-shadow: 0 0 20px #FBC02D, 0 0 40px #F9A825;
+      transform: scale(1.05);
+    }
+
+    .boton-amarillo {
+      background-color: #FBC02D;
+      color: #121212;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 10px #FBC02D55;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .boton-amarillo:hover {
+      background-color: #F9A825;
       transform: scale(1.05);
     }
 
@@ -64,8 +82,8 @@
     }
 
     h2 {
-      color: #00bfa5;
-      border-bottom: 2px solid #004d40;
+      color: #FBC02D;
+      border-bottom: 2px solid #F9A825;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
@@ -79,7 +97,7 @@
 
     .accordion button {
       background-color: #1e1e1e;
-      color: #00e5ff;
+      color: #FBC02D;
       cursor: pointer;
       padding: 1rem;
       width: 100%;
@@ -120,8 +138,16 @@
 <body>
  <header style="text-align: center; padding: 1.5rem 1rem; background-color: #121212; color: #e0f7fa;">
  
-  <h1 style="font-size: 2rem; color: #00e5ff; margin: 3rem;">Carpeta Pedagógica 2025–2026</h1>
-    <img src="https://i.postimg.cc/Y215yGWY/pbu-Gk-T1rci-Kvlm-NEv8-Oyz5a-Znwn-FY8w-R-removebg-preview-1.png" alt="Encabezado Carpeta Pedagógica" style="max-width: 10%; height: auto; margin-bottom: 1rem;">
+  <h1 style="font-size: 2rem; color: #FBC02D; margin: 3rem;">Carpeta Pedagógica 2025–2026</h1>
+   <img 
+  src="https://i.postimg.cc/Y215yGWY/pbu-Gk-T1rci-Kvlm-NEv8-Oyz5a-Znwn-FY8w-R-removebg-preview-1.png" 
+  alt="Encabezado Carpeta Pedagógica" 
+  style="
+    max-width: 10%; 
+    height: auto; 
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px #FBC02D) drop-shadow(0 0 20px #FBC02D);
+  ">
     <p>Arte Integral</p>
     <p>Yobana Orozco Benavides</p>
   </header>
@@ -131,6 +157,7 @@
   <button class="toggle-btn" onclick="solicitarClave('primaria')">Primaria</button>
   <button class="toggle-btn" onclick="solicitarClave('secundaria')">Secundaria</button>
 </nav>
+
 
 <section id="inicial" style="display: none;">
   <h2>Educación Inicial</h2>
@@ -152,18 +179,15 @@
     const claveCorrecta = "820414";
     const claveIngresada = prompt("🔐 Ingresa la clave para acceder:");
     if (claveIngresada === claveCorrecta) {
-      // Ocultar todas las secciones primero
       document.querySelectorAll("section").forEach(sec => {
         sec.style.display = "none";
       });
-      // Mostrar la sección correspondiente
       document.getElementById(id).style.display = "block";
     } else if (claveIngresada !== null) {
       alert("❌ Clave incorrecta. Intenta nuevamente.");
     }
   }
 </script>
-
 
 
   <section id="inicial">
@@ -9343,7 +9367,7 @@ Manifiesto, autenticidad, símbolo, identidad, voz, expresión, creación, evolu
     Los proyectos integran el <strong>arte, la literatura, la tecnología, la filosofía, la ética, las ciencias sociales, las emociones y la ecología</strong>, dando vida a experiencias educativas donde el aula se convierte en un laboratorio de sentido, creación y transformación.
   </p>
 
-  <p style="font-style: italic; color: #b2ebf2; margin-top: 2rem; text-align: center;">
+  <p style="font-style: italic; color: #FBC02D; margin-top: 2rem; text-align: center;">
     Esta carpeta es, en esencia, una obra viva. Una invitación a enseñar con arte y a aprender con sentido.
   </p>
 </div>
@@ -9388,19 +9412,27 @@ Manifiesto, autenticidad, símbolo, identidad, voz, expresión, creación, evolu
      
    
 
-    <footer style="background-color: #121212; color: #00e5ff; text-align: center; padding: 1.5rem 1rem; font-size: 0.95rem; border-top: 2px solid #00e5ff;">
-    <p style="margin: 0;">
-  Creado con 💙 por <strong>Yobana Orozco Benavides</strong> · 
-  <span style="opacity: 0.8;">
-    Iniciado en 2023 · Modificado en 2024 y 2025 · Articulado con el proyecto e investigaciones "Emociones en el Aula"
-  </span>
-</p>
+     <footer style="background-color: #121212; color: #FBC02D; text-align: center; padding: 1.5rem 1rem; font-size: 0.95rem; border-top: 2px solid #FBC02D;">
+  <p style="margin: 0;">
+    Creado con 💛 por <strong>Yobana Orozco Benavides</strong> · 
+    <span style="opacity: 0.8;">
+      Iniciado en 2023 · Modificado en 2024 y 2025 · Articulado con el proyecto e investigaciones "Emociones en el Aula"
+    </span>
   </p>
-    </p>
-    <p style="margin: 0.5rem 0 0; font-size: 0.85rem; color: #e0f7fa;">
-      Todos los derechos reservados · Arte, educación y transformación
-    </p>
-  </footer>
+
+  <p style="margin: 0.5rem 0 0; font-size: 0.85rem; color: #e0f7fa;">
+    © 2025 · Todos los derechos reservados · Arte, educación y transformación
+  </p>
+
+  <!-- Bio link -->
+  <p style="margin-top: 0.8rem;">
+    🔗 Más en: 
+    <a href="https://yobanaorozcoartista.bio.link/" target="_blank" style="color: #FBC02D; text-decoration: underline; font-weight: bold;">
+      yobanaorozcoartista.bio.link
+    </a>
+  </p>
+</footer>
+
 
 
   <script>
